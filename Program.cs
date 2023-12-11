@@ -1,33 +1,36 @@
-﻿int n = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[n];
-
-Console.Write("Введите число для поиска: ");
-int k = Convert.ToInt32(Console.ReadLine());
-
-for(int i = 0; i < array.Length; i++)
-    array[i] = new Random().Next(0, 11); //[0;10]
-Console.WriteLine(string.Join(", ", array));
-
-bool flag = false;
-for(int i = 0; i < array.Length; i ++)
+﻿internal class Program
 {
-    if (array[i] == k)
+    private static void Main(string[] args)
     {
-        Console.WriteLine("Yes");
-        flag = true;
-        break;
-    }
+        void InputArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+                array[i] = new Random().Next(0, 20);
+        }
+
+        // функция возвращает True если число простое, иначе False
+        bool CheckProst(int x)
+        {
+            for (int j = 2; j < x; j++)
+                if (x % j == 0)
+                    return false;
+            return true;
+        }
+
+
+        void ReleaseArray(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+                CheckProst(array[i])
+        
 }
 
-if (flag == false)
-    Console.WriteLine("No");
-   
-    //--------------------------------------------------------------------------------------------------------------------------------------------
-    //
-    //
-    array = [4, 16, 30, 12, 9, 22, 46, 58, 74, 82]
-    count = 0
-        for number in array:
-        if number % 2 == 0:
-        count += 1
-        print(“Количество четных чисел:”, count)
+        Console.Clear();
+        Console.Write("Введите число элементов: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] array = new int[n];
+        InputArray(array);
+        Console.WriteLine(string.Join(", ", array));
+        ReleaseArray(array);
+    }
+}
