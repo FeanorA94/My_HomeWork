@@ -1,12 +1,16 @@
-﻿internal class Program
-{
-    private static void Main(string[] args)
-    {
-        void InputArray(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-                array[i] = new Random().Next(0, 20);
-        }
+// 2 УРОК !!!---------------------------------------------------------------------------------------------------------------------------------------------
+
+//   2.Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+
+//     internal class Program
+// {
+// private static void Main(string[] args)
+// {
+//     void InputArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//                 array[i] = new Random().Next(0, 20);
+//         }
 
 //         // функция возвращает True если число простое, иначе False
 //         bool CheckProst(int x)
@@ -18,19 +22,50 @@
 //         }
 
 
-        void ReleaseArray(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-                CheckProst(array[i])
+//         void ReleaseArray(int[] array)
+//         {
+//             for (int i = 0; i < array.Length; i++)
+//                 CheckProst(array[i]);
         
-}
+//         }
 
-        Console.Clear();
-        Console.Write("Введите число элементов: ");
-        int n = Convert.ToInt32(Console.ReadLine());
-        int[] array = new int[n];
-        InputArray(array);
-        Console.WriteLine(string.Join(", ", array));
-        ReleaseArray(array);
-    }
-}
+//         Console.Clear();
+//         Console.Write("Введите число элементов: ");
+//         int n = Convert.ToInt32(Console.ReadLine());
+//         int[] array = new int[n];
+//         InputArray(array);
+//         Console.WriteLine(string.Join(", ", array));
+//         ReleaseArray(array);
+//     }
+// }
+
+// \\-----------------------------------------------------------------------------------------------------------------------------------------------------
+// Задача 1: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+//     using System;
+
+// namespace ElementFinder
+// {
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             int[,] array = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+//             Console.WriteLine("Введите позицию по x:");
+//             int x = Convert.ToInt32(Console.ReadLine());
+//             Console.WriteLine("Введите позицию по y:");
+//             int y = Convert.ToInt32(Console.ReadLine());
+
+//             if (x >= 0 && x < array.GetLength(0) && y >= 0 && y < array.GetLength(1))
+//             {
+//                 Console.WriteLine($"Элемент с координатами ({x}, {y}) равен {array[x, y]}.");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("Такого элемента не существует.");   
+// }
+
+//         Console.ReadKey();
+//     }
+// }
+// }
